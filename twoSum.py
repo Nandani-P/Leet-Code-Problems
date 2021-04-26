@@ -52,6 +52,31 @@ class Solution(object):
         else:
             return res
             
+"""Given an integer x, return true if x is palindrome integer.
+An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
+"""
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0 or x > 2147483647:
+            return False
+        x = str(x)
+        listX = list(x)
+        lenListX = len(listX)
+        
+        if lenListX == 2 and listX[0] !=listX[1]:
+            return False
+            
+        if lenListX ==1:
+            return True
+        
+        for i in range(lenListX//2):
+            if listX[i] != listX[-(i+1)]:
+                return False
+        return True
         
             
             
